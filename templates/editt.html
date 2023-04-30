@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+</head>
+<body>
+    {% for item in edit_book %}
+    <p> Book title: {{ item.title }}</p>
+    <p> Book rating: {{ item.rating }}</p>
+    <form action="{{ url_for('edit') }}" method="POST">
+        <label>Rating</label>
+        <input name="rating" type="text">
+        <input hidden="hidden" name="title" value="{{item.title}}">
+        <button type="submit"> Change </button>
+    </form>
+    {% endfor %}
+</body>
+</html>

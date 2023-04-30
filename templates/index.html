@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+<h1>My Library</h1>
+    <ul>
+        {% for item in list %}
+        <li><a href="{{ url_for('delete', title=item.title) }}">Delete</a> - {{item.title}} - {{item.author}} - {{item.rating}} - <a href="{{ url_for('edit', title=item.title) }}">Edit Rating</a></li>
+        {% endfor %}
+    </ul>
+    
+<a href="{{ url_for('add') }}">Add New Book</a>
+</body>
+</html>
